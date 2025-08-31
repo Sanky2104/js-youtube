@@ -29,7 +29,7 @@ const obj4 = {2:"a"}
 // const obj3 = Object.assign(obj1, obj2) // changes the obj1 directly
 // const obj3 = Object.assign({}, obj1, obj2, obj4) // copies into an empty array
 const obj3 = {...obj1, ...obj2, ...obj4}
-console.log(obj3);
+// console.log(obj3);
 
 const users = [
     {
@@ -48,4 +48,31 @@ users[1].email
 // console.log(Object.values(appUser));
 // console.log(Object.entries(appUser));
 
-console.log(appUser.hasOwnProperty('isLoggedIn'));
+// console.log(appUser.hasOwnProperty('isLoggedIn'));
+
+////////////// Destructuring ////////////////////////
+
+const course = {
+    courseName: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+//course.courseInstructor // this is a repetiive and exhaustive way
+
+// const {courseInstructor} = course
+// console.log(courseInstructor);
+
+const {courseInstructor: teacher} = course
+console.log(teacher);
+
+////////////////////// JSON and APIs ////////////////////////
+
+// Json object doesn't have a name, whereas js object does, also, json keys are explicitly defined as strings (only)
+
+// {
+//     "name":"sans",
+//     "course":"js",
+//     "price": "free"
+// }
+
