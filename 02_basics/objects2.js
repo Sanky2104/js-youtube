@@ -66,7 +66,7 @@ const course = {
 const {courseInstructor: teacher} = course
 console.log(teacher);
 
-////////////////////// JSON and APIs ////////////////////////
+////////////////////// JSON ////////////////////////
 
 // Json object doesn't have a name, whereas js object does, also, json keys are explicitly defined as strings (only)
 
