@@ -32,7 +32,6 @@ buttons.forEach(function (button) {
 ## Project 2
 
 ``` javascript
-
 let form = document.querySelector('form');
 
 // this will give you empty value...so we write it inside the event listener to get values after submit
@@ -60,5 +59,18 @@ form.addEventListener('submit', function(e){
     }
   }
 })
+```
+
+## Project 3
+
+``` javascript
+let clock = document.getElementById('clock');
+
+//in set intervali, the time is in milliseconds
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 
 ```
