@@ -19,6 +19,50 @@
     </div>
 </body>
 <script>
+    // this approach should not be used, we should use event listeners as they provide more functionality(for eg, propagation)
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }
+
+    // false isme default hota hi hai, this value is basically used in event bubbling or event propagation
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     // alert('owl clicked again')
+    //     console.log("clicked inside the ul")
+    // }, true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     // alert('owl clicked again')
+    //     console.log("owl clicked")
+    //     e.stopPropagation() // prevents event capturing and propagation
+    // }, true)
     
+    // // Event Bubbling and propagation -> (if value is false) bubble neeche se oopar jaata hai...so pehle "owl clicked" print hoga, and then "clicked inside the ul"
+    // // Agar, value true hai (Matlab hum event ko capture kar rahe hain), then pehle "clciked inside the ul" and then "owl clicked" print hoga
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        // console.log("google clicked")
+    }, false)
+
+    // read these things about events for exams and interviews (VVVVVVIMP)
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY,screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // this is about the history of JS events
+    // attachEvent method
+    // jQuery - on
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        if (e.target.tagName ==='IMG'){
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove() // 1st way
+            // removeIt.parentNode.removeChild(removeIt)// 2nd way
+        }
+    }, false)
+
 </script>
 </html>
