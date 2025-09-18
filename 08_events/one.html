@@ -64,5 +64,26 @@
         }
     }, false)
 
+
+// Some Self Notes
+
+// ✅ What is Event Propagation?
+// When you click an element, the event doesn’t just "live" there — it travels through the DOM tree.
+// There are two phases:
+// Capturing (trickling down) → From the top (document) → down to the clicked element.
+// Bubbling (going up) → From the clicked element → back up to the root.
+
+//By default, JavaScript uses bubbling phase (false in addEventListener).
+
+
+// ✅ Summary Table
+
+// Parent (UL)	Child (IMG)	 Click Order
+// false	  false	        OWL → UL
+// true	  true	        UL → OWL
+// true	  false	        UL → OWL
+// false	  true	        OWL → UL
+
+
 </script>
 </html>
