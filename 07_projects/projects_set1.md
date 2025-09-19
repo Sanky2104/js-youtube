@@ -173,3 +173,42 @@ function endGame() {
   newGame();
 }
 ```
+
+## Project 6
+
+```javascript
+//generate a random color
+
+let randomColor = function () {
+  let hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+// console.log(randomColor())
+
+let intervalID;
+
+let changeBackground = function () {
+  document.body.style.backgroundColor = randomColor();
+};
+
+let startChangingColor = function () {
+  if (!intervalID) {
+    intervalID = setInterval(changeBackground, 1000);
+  }
+};
+let stopChangingCOlor = function () {
+  console.log('STOPPING...');
+  clearInterval(intervalID);
+  intervalID = null;
+};
+
+document.getElementById('start').addEventListener('click', startChangingColor);
+
+document.getElementById('stop').addEventListener('click', stopChangingCOlor);
+
+```
